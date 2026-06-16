@@ -1,9 +1,18 @@
-#ifndef MOTION_DATA_H
-#define MOTION_DATA_H
+#ifndef IMU_SENSOR_H
+#define IMU_SENSOR_H
 
-struct MotionData {
-  float pitch;
-  float roll;
+class IMUSensor {
+public:
+
+  float getPitch(float pitch)
+  {
+    return pitch;
+  }
+
+  float getRoll(float roll)
+  {
+    return roll;
+  }
 };
 
 #endif
