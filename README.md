@@ -68,13 +68,24 @@ Uno de los retos más importantes fue lograr que la mariposa virtual se moviera 
 
 Como mejora futura, se podría implementar una mariposa física con alas móviles, agregar servomotores, mejorar la interfaz gráfica y utilizar sensores más precisos para obtener una simulación más estable.
 
-Conclusión individual – Integrante 2
+Conclusión individual – Jouse Braulio Ravelo Lopez
+Durante el desarrollo de este proyecto aprendí a integrar diferentes tecnologías para lograr la comunicación entre hardware y software en tiempo real. Utilicé un ESP32 junto con un sensor MPU6050 para detectar la inclinación del dispositivo y transmitir esos datos mediante Wi-Fi hacia una aplicación desarrollada en Unity.
 
-[Redactar conclusión individual]
+Uno de los principales aprendizajes fue comprender el funcionamiento de la comunicación I2C entre el ESP32 y el MPU6050, así como el procesamiento de los datos obtenidos por el acelerómetro para calcular los ángulos de Pitch y Roll. También aprendí a establecer una conexión de red entre el microcontrolador y la computadora para enviar información de manera continua y utilizar esos datos dentro de una escena 3D.
 
-Conclusión individual – Integrante 3
+Durante las pruebas surgieron diferentes dificultades, principalmente relacionadas con la conexión Wi-Fi, la lectura correcta de los datos del sensor y la orientación de los ejes dentro de Unity. Fue necesario realizar varios ajustes y pruebas hasta conseguir que el movimiento de la mariposa virtual correspondiera correctamente a la inclinación física del sensor.
 
-[Redactar conclusión individual]
+Considero que el proyecto cumplió con el objetivo planteado, ya que fue posible controlar el desplazamiento de la mariposa en Unity utilizando únicamente los movimientos detectados por el MPU6050. Además de fortalecer mis conocimientos en programación y electrónica, este proyecto me permitió entender mejor cómo interactúan los sistemas embebidos con aplicaciones gráficas en tiempo real.
+
+Como trabajo futuro, se podría mejorar la precisión del movimiento mediante técnicas de filtrado de sensores, incorporar más grados de libertad al modelo 3D y desarrollar una versión física de la mariposa que replique los movimientos observados en la simulación.
+
+Conclusión individual – Nancy Cristal Largo Muñoz
+
+A lo largo de su desarrollo fue posible integrar conocimientos de electrónica, programación y comunicación inalámbrica, permitiendo establecer una interacción en tiempo real entre un sistema embebido y una aplicación gráfica.
+
+Durante las diferentes etapas se presentaron retos relacionados con la conexión Wi-Fi, la interpretación de los datos del sensor y la orientación de los ejes dentro de Unity. Sin embargo, la realización de pruebas y ajustes constantes permitió solucionar estos problemas y comprender mejor el funcionamiento de cada uno de los componentes involucrados.
+
+Finalmente, la experiencia adquirida abre la posibilidad de futuras mejoras, como la implementación de sistemas de filtrado más precisos, la incorporación de más grados de libertad y el desarrollo de una versión física capaz de reproducir los movimientos observados en la simulación.
 
 Referencias Bibliográficas
 
