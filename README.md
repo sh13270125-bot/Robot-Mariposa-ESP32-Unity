@@ -317,9 +317,8 @@ Además, el proyecto cuenta con un segundo módulo desarrollado con Arduino Pro 
 
 
 ```
-## Diagrama de Arquitectura
 
-![Diagrama de Arquitectura](imgs/imgdiaframas.png)
+![Arquitectura y Diagrama del Circuito](imgs/imgdiaframas.png)
 ```
 
 ## Simulación en Unity
