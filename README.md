@@ -316,19 +316,14 @@ Además, el proyecto cuenta con un segundo módulo desarrollado con Arduino Pro 
 ## Arquitectura y Diagrama del Circuito
 
 
-```
 
 ![Arquitectura y Diagrama del Circuito](imgs/imgdiaframas.png)
-```
 
 ## Simulación en Unity
 
 
-```
 ![Simulación en Unity](imgs/magen _de_pitch_and_roll.jpeg)
-```
 
----
 
 
 ---
