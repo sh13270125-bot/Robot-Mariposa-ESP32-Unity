@@ -322,7 +322,7 @@ Además, el proyecto cuenta con un segundo módulo desarrollado con Arduino Pro 
 ## Simulación en Unity
 
 
-![Simulación en Unity](imgs/magen _de_pitch_and_roll.jpeg)
+![Simulación en Unity](imgs/imagen _de_pitch_and_roll.jpeg)
 
 
 
