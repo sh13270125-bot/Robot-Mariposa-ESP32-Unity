@@ -326,7 +326,6 @@ Además, el proyecto cuenta con un segundo módulo desarrollado con Arduino Pro 
 
 
 
----
 
 # Mejoras futuras
 
