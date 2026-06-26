@@ -1,131 +1,353 @@
-# Robot-Mariposa-ESP32-UnityREADME.txt
-Nombre del proyecto
+#  Robot Mariposa Biomimético
 
-Robot Mariposa Controlado mediante ESP32 y MPU6050 con Visualización en Unity
+## Descripción
 
-Qué hace el proyecto
+Este proyecto consiste en el desarrollo de un robot biomimético inspirado en el movimiento de una mariposa. El sistema fue dividido en dos módulos principales:
 
-Este proyecto simula el movimiento de una mariposa utilizando un sensor MPU6050 conectado a un ESP32. El sensor detecta la inclinación física del dispositivo y el ESP32 transmite los datos mediante Wi-Fi hacia Unity. En Unity, una mariposa 3D se mueve en la dirección correspondiente a la inclinación del sensor.
+- Simulación virtual en Unity utilizando un ESP32 y un sensor MPU6050.
+- Sistema físico de aleteo utilizando un Arduino Pro Mini y dos servomotores.
 
-Lenguajes utilizados
-C++ para ESP32.
-C# para Unity.
-Requisitos necesarios
+El objetivo es reproducir el movimiento de una mariposa mediante la inclinación de un sensor MPU6050, permitiendo controlar el desplazamiento del modelo virtual y, posteriormente, el movimiento físico de las alas.
 
-Hardware:
+---
 
-ESP32.
-MPU6050.
-Protoboard.
-Cables Dupont.
-Computadora.
-Hotspot de celular.
-Power bank o cable USB.
+# Características
 
-Software:
+- Comunicación inalámbrica mediante WiFi.
+- Simulación 3D en Unity.
+- Lectura de orientación mediante MPU6050.
+- Movimiento basado en Pitch y Roll.
+- Arquitectura modular utilizando Programación Orientada a Objetos.
+- Aplicación de principios SOLID.
+- Organización del proyecto mediante programación por capas.
 
-Arduino IDE.
-Unity 6.
-Visual Studio.
-Librerías de Arduino: Wire.h, MPU6050.h, WiFi.h.
-Diagrama de conexión del hardware
+---
 
-El diagrama se encuentra en la carpeta:
+# Hardware utilizado
 
-imgs/Diagrama_del_circuito.png
+## Módulo ESP32
 
-Conexiones:
+- ESP32 Dev Module
+- Sensor MPU6050
+- Protoboard
+- Cables Dupont
+- Alimentación USB
 
-MPU6050 → ESP32
-VCC → 3.3V
-GND → GND
-SDA → GPIO 21
-SCL → GPIO 22
+## Módulo de Aleteo
 
-Cómo implementar el código
-Abrir Arduino IDE.
-Instalar la librería MPU6050.
-Abrir el archivo main.ino.
-Configurar el nombre y contraseña del Wi-Fi.
-Subir el código al ESP32.
-Abrir el Monitor Serial.
-Copiar la IP del ESP32.
-Abrir Unity.
-Colocar la IP del ESP32 en el script SerialMPU.cs.
-Ejecutar la escena con Play.
-Funcionamiento
+- Arduino Pro Mini
+- Receptor FlySky iBUS
+- 2 Servomotores
+- Fuente de alimentación
 
-El ESP32 lee el sensor MPU6050, calcula Pitch y Roll y envía los valores por Wi-Fi a Unity. Unity recibe esos valores y mueve la mariposa 3D dentro del escenario.
+---
 
-Conclusiones
-Conclusión individual – Samuel Hernández Oliva
+# Software utilizado
 
-Durante el desarrollo de este proyecto aprendí a integrar hardware y software dentro de una misma aplicación. Uno de los aprendizajes más importantes fue comprender cómo un sensor físico puede enviar información a una aplicación gráfica y cómo esos datos pueden transformarse en movimiento dentro de Unity.
+- Arduino IDE
+- Unity
+- Visual Studio Code
+- GitHub
 
-También aprendí a trabajar con el ESP32, el sensor MPU6050 y la comunicación Wi-Fi. Al principio se presentaron varios problemas, como errores de conexión, puertos ocupados, ejes invertidos y movimientos incorrectos dentro de Unity. Sin embargo, cada problema permitió entender mejor el funcionamiento del sistema.
+---
 
-Uno de los retos más importantes fue lograr que la mariposa virtual se moviera en la misma dirección en la que se inclinaba el sensor. Para solucionarlo fue necesario probar diferentes configuraciones de Pitch y Roll hasta que el movimiento coincidiera correctamente.
+# Librerías utilizadas
 
-Como mejora futura, se podría implementar una mariposa física con alas móviles, agregar servomotores, mejorar la interfaz gráfica y utilizar sensores más precisos para obtener una simulación más estable.
+## ESP32
 
-Conclusión individual – Jouse Braulio Ravelo Lopez
-Durante el desarrollo de este proyecto aprendí a integrar diferentes tecnologías para lograr la comunicación entre hardware y software en tiempo real. Utilicé un ESP32 junto con un sensor MPU6050 para detectar la inclinación del dispositivo y transmitir esos datos mediante Wi-Fi hacia una aplicación desarrollada en Unity.
+- WiFi.h
+- Wire.h
+- MPU6050.h
 
-Uno de los principales aprendizajes fue comprender el funcionamiento de la comunicación I2C entre el ESP32 y el MPU6050, así como el procesamiento de los datos obtenidos por el acelerómetro para calcular los ángulos de Pitch y Roll. También aprendí a establecer una conexión de red entre el microcontrolador y la computadora para enviar información de manera continua y utilizar esos datos dentro de una escena 3D.
+## Arduino
 
-Durante las pruebas surgieron diferentes dificultades, principalmente relacionadas con la conexión Wi-Fi, la lectura correcta de los datos del sensor y la orientación de los ejes dentro de Unity. Fue necesario realizar varios ajustes y pruebas hasta conseguir que el movimiento de la mariposa virtual correspondiera correctamente a la inclinación física del sensor.
+- Servo.h
+- IBusBM.h
 
-Considero que el proyecto cumplió con el objetivo planteado, ya que fue posible controlar el desplazamiento de la mariposa en Unity utilizando únicamente los movimientos detectados por el MPU6050. Además de fortalecer mis conocimientos en programación y electrónica, este proyecto me permitió entender mejor cómo interactúan los sistemas embebidos con aplicaciones gráficas en tiempo real.
+---
 
-Como trabajo futuro, se podría mejorar la precisión del movimiento mediante técnicas de filtrado de sensores, incorporar más grados de libertad al modelo 3D y desarrollar una versión física de la mariposa que replique los movimientos observados en la simulación.
+# Organización del proyecto
 
-Conclusión individual – Nancy Cristal Largo Muñoz
+```
+Robot-Mariposa-ESP32-Unity
+│
+├── esp32/
+│   ├── Mariposa.ino
+│   ├── MotionData.h
+│   ├── IMUSensor.h
+│   ├── MovementMath.h
+│   ├── WiFiCommunication.h
+│   └── ButterflyController.h
+│
+├── unity/
+│   ├── NetworkManager.cs
+│   ├── ButterflyMovement.cs
+│   ├── CameraFollow.cs
+│   └── UIManager.cs
+│
+├── imgs/
+│
+├── video/
+│
+└── README.md
+```
 
-A lo largo de su desarrollo fue posible integrar conocimientos de electrónica, programación y comunicación inalámbrica, permitiendo establecer una interacción en tiempo real entre un sistema embebido y una aplicación gráfica.
+---
 
-Durante las diferentes etapas se presentaron retos relacionados con la conexión Wi-Fi, la interpretación de los datos del sensor y la orientación de los ejes dentro de Unity. Sin embargo, la realización de pruebas y ajustes constantes permitió solucionar estos problemas y comprender mejor el funcionamiento de cada uno de los componentes involucrados.
+# Descripción de las carpetas
 
-Finalmente, la experiencia adquirida abre la posibilidad de futuras mejoras, como la implementación de sistemas de filtrado más precisos, la incorporación de más grados de libertad y el desarrollo de una versión física capaz de reproducir los movimientos observados en la simulación.
+## esp32
 
-Referencias Bibliográficas
+Contiene el código del ESP32 encargado de leer el sensor MPU6050, procesar los valores de Pitch y Roll y enviarlos mediante WiFi hacia Unity.
 
-[1] Espressif Systems, “ESP32 Technical Reference Manual,” Espressif Systems, 2024.
+Las clases fueron separadas para facilitar el mantenimiento del código y aplicar Programación Orientada a Objetos.
 
-[2] InvenSense, “MPU-6000 and MPU-6050 Product Specification,” TDK InvenSense, 2013.
+### MotionData.h
 
-[3] Arduino, “Arduino Documentation,” Arduino, 2024.
+Contiene la estructura donde se almacenan los datos de Pitch y Roll.
 
-[4] Unity Technologies, “Unity Manual,” Unity Technologies, 2024.
+### IMUSensor.h
 
-[5] Microsoft, “C# Documentation,” Microsoft Learn, 2024.
+Se encarga únicamente de inicializar y leer el sensor MPU6050.
 
-[6] GitHub, “GitHub Docs,” GitHub, 2024.
+### MovementMath.h
 
-Anexos
-Anexo A: Enlace al repositorio
+Contiene las funciones matemáticas utilizadas para calcular Pitch y Roll.
 
-[Colocar enlace de GitHub]
+### WiFiCommunication.h
 
-Anexo B: Video demostrativo
+Administra la conexión WiFi entre el ESP32 y Unity.
 
-[Colocar enlace al video]
+### ButterflyController.h
 
-Anexo C: Diagramas
-Diagrama de arquitectura.
-Diagrama del circuito.
-Captura de la aplicación en Unity.
-Anexo D: Código fuente relevante
+Procesa la información recibida del sensor aplicando la zona muerta antes de enviarla al sistema.
 
-El código completo se encuentra en el repositorio del proyecto.
+---
 
-Anexo E: Manual de usuario
-Encender el hotspot del celular.
-Conectar la computadora al hotspot.
-Encender el ESP32.
-Verificar la IP en el Monitor Serial.
-Abrir Unity.
-Ejecutar la simulación.
-Inclinar el sensor para mover la mariposa.
-Anexo F: Manual técnico
+## unity
 
-El sistema utiliza comunicación I2C entre el MPU6050 y el ESP32. El ESP32 calcula Pitch y Roll y envía estos datos mediante Wi-Fi usando TCP/IP. Unity recibe los datos en C#, los inter
+Contiene todos los scripts desarrollados para la simulación en Unity.
+
+### NetworkManager.cs
+
+Administra la comunicación TCP/IP con el ESP32.
+
+### ButterflyMovement.cs
+
+Controla el movimiento y la rotación de la mariposa dentro del escenario.
+
+### CameraFollow.cs
+
+Hace que la cámara siga automáticamente a la mariposa durante la simulación.
+
+### UIManager.cs
+
+Actualiza la interfaz gráfica mostrando el estado de conexión y los valores de Pitch y Roll.
+
+---
+
+## imgs
+
+Contiene las imágenes utilizadas para documentar el proyecto.
+
+- Diagrama de arquitectura.
+- Diagrama del circuito.
+- Capturas de Unity.
+- Fotografías del prototipo.
+
+---
+
+## video
+
+Contiene el video demostrativo del funcionamiento del proyecto.
+
+---
+
+# Cómo ejecutar el proyecto
+
+## ESP32
+
+1. Abrir el archivo Mariposa.ino en Arduino IDE.
+2. Instalar las librerías necesarias.
+3. Configurar el nombre y contraseña de la red WiFi.
+4. Seleccionar la placa ESP32 Dev Module.
+5. Compilar y cargar el programa.
+6. Abrir el Monitor Serial para obtener la dirección IP.
+
+---
+
+## Unity
+
+1. Abrir el proyecto en Unity.
+2. Configurar la dirección IP del ESP32 en NetworkManager.cs.
+3. Ejecutar la simulación presionando Play.
+4. Inclinar el sensor MPU6050 para controlar el movimiento de la mariposa.
+
+---
+
+# Comunicación del sistema
+
+La comunicación entre el ESP32 y Unity se realiza mediante WiFi utilizando el protocolo TCP/IP.
+
+El ESP32 obtiene continuamente los valores de Pitch y Roll del sensor MPU6050 y los envía al computador. Unity recibe estos datos en tiempo real y actualiza la posición y orientación de la mariposa dentro del entorno virtual.
+---
+
+# Arquitectura del sistema
+
+El proyecto fue diseñado siguiendo una arquitectura por capas para facilitar el mantenimiento, la reutilización del código y la escalabilidad del sistema.
+
+## Capa de Presentación
+
+Corresponde a la simulación desarrollada en Unity.
+
+Está formada por los siguientes componentes:
+
+- UIManager.cs
+- CameraFollow.cs
+- Modelo 3D de la mariposa
+- Interfaz gráfica
+
+Su función es mostrar visualmente el estado del sistema y representar el movimiento de la mariposa en tiempo real.
+
+---
+
+## Capa de Lógica
+
+Es la encargada de procesar toda la información obtenida por el sensor.
+
+Está conformada por:
+
+- ButterflyController.h
+- MovementMath.h
+- ButterflyMovement.cs
+
+En esta capa se realizan:
+
+- Cálculo de Pitch.
+- Cálculo de Roll.
+- Zona muerta.
+- Movimiento de la mariposa.
+- Rotación del modelo.
+
+---
+
+## Capa de Acceso a Datos
+
+Es la responsable de obtener los datos provenientes del hardware.
+
+Está conformada por:
+
+- IMUSensor.h
+- MotionData.h
+
+Su función consiste en inicializar el sensor MPU6050, leer los datos del acelerómetro y giroscopio y almacenarlos para su posterior procesamiento.
+
+---
+
+## Capa de Comunicación
+
+Permite la comunicación entre el ESP32 y Unity mediante WiFi.
+
+Está formada por:
+
+- WiFiCommunication.h
+- NetworkManager.cs
+
+Su función es enviar y recibir continuamente los valores de Pitch y Roll para mantener sincronizado el sistema.
+
+---
+
+# Principios SOLID
+
+Durante el desarrollo del proyecto se aplicaron diversos principios SOLID para mejorar la organización del software.
+
+## Principio de Responsabilidad Única (SRP)
+
+Cada clase tiene una única responsabilidad.
+
+Ejemplos:
+
+- IMUSensor únicamente lee el MPU6050.
+- MovementMath únicamente realiza cálculos matemáticos.
+- WiFiCommunication únicamente administra la conexión WiFi.
+- NetworkManager únicamente recibe la información enviada por el ESP32.
+- ButterflyMovement únicamente controla el movimiento del modelo 3D.
+
+---
+
+## Principio Abierto/Cerrado (OCP)
+
+El sistema permite agregar nuevos sensores o nuevos métodos de comunicación sin modificar las clases existentes.
+
+Por ejemplo, sería posible reemplazar la comunicación WiFi por Bluetooth implementando una nueva clase de comunicación.
+
+---
+
+## Principio de Sustitución de Liskov (LSP)
+
+Las clases fueron diseñadas para poder modificarse o ampliarse sin afectar el funcionamiento del resto del sistema.
+
+---
+
+## Principio de Segregación de Interfaces (ISP)
+
+Las responsabilidades fueron divididas en clases pequeñas evitando crear clases con múltiples funciones diferentes.
+
+---
+
+## Principio de Inversión de Dependencias (DIP)
+
+Las diferentes clases trabajan de forma independiente y únicamente intercambian la información necesaria para el funcionamiento del sistema.
+
+---
+
+# Resultados
+
+El sistema permite controlar una mariposa virtual mediante la inclinación de un sensor MPU6050 conectado a un ESP32.
+
+Los movimientos realizados por el usuario son enviados mediante WiFi hacia Unity, donde la mariposa replica la orientación y el desplazamiento en tiempo real.
+
+Además, el proyecto cuenta con un segundo módulo desarrollado con Arduino Pro Mini encargado del movimiento físico de las alas mediante dos servomotores.
+
+---
+
+# Imágenes del proyecto
+
+## Arquitectura y Diagrama del Circuito
+
+
+```
+imgs/imgdiaframas.png
+```
+
+## Simulación en Unity
+
+
+```
+imgs/magen _de_pitch_and_roll.jpeg
+```
+
+---
+
+
+---
+
+# Mejoras futuras
+
+Como trabajo futuro se pretende integrar completamente el sistema físico y la simulación virtual utilizando un único ESP32 para controlar tanto el movimiento de las alas como la simulación en Unity.
+
+También se planea incorporar servomotores adicionales para controlar el cuerpo, la cabeza y la cola de la mariposa, así como implementar algoritmos de estabilización que permitan obtener un movimiento aún más realista.
+
+---
+
+# Autores
+
+- Samuel Hernández Oliva
+- Nancy Cristal Largo Muñoz
+- Josué Braulio Ravelo López
+
+---
+
+# Licencia
+
+Este proyecto fue desarrollado con fines académicos para la asignatura de Programación Avanzada.
